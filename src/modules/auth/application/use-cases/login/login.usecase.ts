@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { AuthInterface } from 'src/modules/auth/domain/auth.interface';
 import { AuthRepository } from 'src/modules/auth/infrastructure/persistence/auth.repository';
-import { LoginOutput } from 'src/shared/jwt/jwt.interfaces';
+import { LoginOutput } from 'src/shared/services/jwt/jwt.interfaces';
 
 @Injectable()
 export class LoginUseCase {

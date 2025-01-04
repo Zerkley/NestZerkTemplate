@@ -3,9 +3,9 @@ import { InjectModel } from '@nestjs/mongoose';
 import { AuthDocument, AuthSchemaName } from './auth.schema';
 import { Model } from 'mongoose';
 import { AuthInterface } from '../../domain/auth.interface';
-import { HashService } from 'src/shared/hash/hash.service';
-import { TokenService } from 'src/shared/jwt/jwt.service';
-import { JwtOutput, LoginOutput } from 'src/shared/jwt/jwt.interfaces';
+import { HashService } from 'src/shared/services/hash/hash.service';
+import { TokenService } from 'src/shared/services/jwt/jwt.service';
+import { JwtOutput, LoginOutput } from 'src/shared/services/jwt/jwt.interfaces';
 
 @Injectable()
 export class AuthRepository {

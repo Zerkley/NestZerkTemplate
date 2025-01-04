@@ -10,9 +10,9 @@ import {
   AuthSchema,
   AuthSchemaName,
 } from './infrastructure/persistence/auth.schema';
-import { HashService } from 'src/shared/hash/hash.service';
+import { HashService } from 'src/shared/services/hash/hash.service';
 import { MongooseModule } from '@nestjs/mongoose';
-import { TokenService } from 'src/shared/jwt/jwt.service';
+import { TokenService } from 'src/shared/services/jwt/jwt.service';
 import { RefreshTokenUseCase } from './application/use-cases/refresh-token/refreshToken.usecase';
 import { RegisterUseCase } from './application/use-cases/register/register.usecase';
 
