@@ -10,12 +10,18 @@ export class TokenService {
     return {
       accessToken: this.jwtService.sign(payload, {
         secret: process.env.JWT_SECRET,
-        expiresIn: '1d',
+        expiresIn: '2d',
       }),
       refreshToken: this.jwtService.sign(payload, {
-        secret: process.env.JWT_SECRET,
-        expiresIn: '7d',
+        secret: process.env.JWT_REFRESH_SECRET,
+        expiresIn: '14d',
       }),
     };
+  }
+
+  async verify(token: string): Promise<JwtPayload> {
+    return this.jwtService.verify(token, {
+      secret: process.env.JWT_SECRET,
+    });
   }
 }

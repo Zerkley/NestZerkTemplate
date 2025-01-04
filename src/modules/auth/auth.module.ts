@@ -12,11 +12,14 @@ import {
 } from './infrastructure/persistence/auth.schema';
 import { HashService } from 'src/shared/hash/hash.service';
 import { MongooseModule } from '@nestjs/mongoose';
+import { TokenService } from 'src/shared/jwt/jwt.service';
+import { RefreshTokenUseCase } from './application/use-cases/refresh-token/refreshToken.usecase';
+import { RegisterUseCase } from './application/use-cases/register/register.usecase';
 
-const USE_CASES = [LoginUseCase];
+const USE_CASES = [LoginUseCase, RegisterUseCase, RefreshTokenUseCase];
 const REPOSITORIES = [AuthRepository];
 const MODELS = [AuthModel];
-const SERVICES = [HashService];
+const SERVICES = [HashService, TokenService];
 @Module({
   controllers: [AuthController],
   providers: [
